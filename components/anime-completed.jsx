@@ -31,7 +31,7 @@ export default function AnimeCompleted() {
   }, []);
 
   if (!ongoingAnime.length) {
-    return <p className="text-center text-sm text-muted-foreground">Loading carousel…</p>;
+    return <p className="text-center text-sm text-muted-foreground">Loading anime…</p>;
   }
 
   return (
