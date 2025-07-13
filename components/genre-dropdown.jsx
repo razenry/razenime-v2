@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 
 export default function GenreDropdown() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [genres, setGenres] = useState([]);
-
+    
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/otakudesu/genres`)
+    fetch(`${apiUrl}/otakudesu/genres`)
       .then((res) => res.json())
       .then((json) => setGenres(json.data.genreList))
       .catch((err) => console.error("Failed to fetch genres:", err));
