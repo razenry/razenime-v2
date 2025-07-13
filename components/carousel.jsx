@@ -55,14 +55,14 @@ export default function CarouselAnime() {
                   />
                 </div>
                 <div className="flex flex-col justify-between flex-grow p-3 space-y-1">
-                  <h3 className="text-sm font-semibold line-clamp-2 min-h-[3.5rem]">
+                  <h3 className="text-sm font-semibold line-clamp-2 min-h-[3.5rem] text-zinc-900 dark:text-white">
                     {anime.title}
                   </h3>
                   <p className="text-xs text-muted-foreground">
                     {anime.episodes} episode • {anime.releaseDay}
                   </p>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                    Rilis: {anime.latestReleaseDate}
+                    Rilis: {anime.lastReleaseDate}
                   </p>
                 </div>
               </Link>
