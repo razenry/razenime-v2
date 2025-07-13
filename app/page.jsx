@@ -10,6 +10,7 @@ export default function Home() {
 
         <h1 className="text-2xl font-bold">Completed anime</h1>
         <AnimeCompleted />
+
       </main>
     </>
   );

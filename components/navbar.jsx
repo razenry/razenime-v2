@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import GenreDropdown from "@/components/genre-dropdown";
+import { ModeToggle } from "./toggle-theme";
 
 export default function Navbar() {
   return (
@@ -62,7 +63,11 @@ export default function Navbar() {
           <Button className="h-8 px-3 bg-white text-black hover:bg-gray-200 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700">
             Search
           </Button>
+          <div className="flex items-center">
+            <ModeToggle />
+          </div>
         </div>
+        {/* Theme Toggle */}
       </div>
     </nav>
   );
