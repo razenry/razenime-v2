@@ -24,7 +24,7 @@ export default function Navbar() {
                 href="#"
                 className="font-bold hover:underline"
               >
-                Razenime
+                RazenimeV2
               </NavigationMenuLink>
             </NavigationMenuItem>
 

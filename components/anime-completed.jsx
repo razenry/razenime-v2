@@ -11,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function CarouselAnime() {
+export default function AnimeCompleted() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [ongoingAnime, setOngoingAnime] = useState([]);
 
@@ -62,7 +62,7 @@ export default function CarouselAnime() {
                     {anime.episodes} episode • {anime.releaseDay}
                   </p>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                    Rilis: {anime.lastReleaseDate}
+                    Rilis: {anime.latestReleaseDate}
                   </p>
                 </div>
               </Link>
