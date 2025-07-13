@@ -15,10 +15,10 @@ export default function AnimeOngoing() {
   const [ongoingAnime, setOngoingAnime] = useState([]);
 
   useEffect(() => {
-    fetch(`${apiUrl}/otakudesu/home`)
+    fetch(`${apiUrl}/otakudesu/ongoing`)
       .then((res) => res.json())
       .then((json) => {
-        const list = json?.data?.ongoing?.animeList;
+        const list = json?.data?.animeList;
         if (Array.isArray(list)) {
           setOngoingAnime(list);
         } else {
@@ -36,7 +36,7 @@ export default function AnimeOngoing() {
 
   return (
     <section className="w-full max-w-screen-xl mx-auto px-4 md:px-6 py-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4">
         {ongoingAnime.map((anime) => (
           <Card
             key={anime.animeId}
@@ -54,7 +54,7 @@ export default function AnimeOngoing() {
               </div>
 
               <CardContent className="p-4 space-y-1 flex flex-col justify-between">
-                <CardTitle className="text-2xl font-bold line-clamp-2 text-zinc-900 dark:text-white min-h-[3rem]">
+                <CardTitle className="text-sm font-bold line-clamp-2 text-zinc-900 dark:text-white min-h-[3rem]">
                   {anime.title}
                 </CardTitle>
                 <CardDescription className="text-xs text-muted-foreground">

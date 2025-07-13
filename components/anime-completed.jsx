@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -16,10 +17,10 @@ export default function AnimeCompleted() {
   const [ongoingAnime, setOngoingAnime] = useState([]);
 
   useEffect(() => {
-    fetch(`${apiUrl}/otakudesu/home`)
+    fetch(`${apiUrl}/otakudesu/completed`)
       .then((res) => res.json())
       .then((json) => {
-        const list = json?.data?.completed?.animeList;
+        const list = json?.data?.animeList;
         if (Array.isArray(list)) {
           setOngoingAnime(list);
         } else {
@@ -58,11 +59,11 @@ export default function AnimeCompleted() {
                   <h3 className="text-sm font-semibold line-clamp-2 min-h-[3.5rem] text-zinc-900 dark:text-white">
                     {anime.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground">
-                    {anime.episodes} episode • {anime.releaseDay}
+                  <p className="text-xs text-muted-foreground flex items-center gap-1">
+                    {anime.episodes} episode • <Star size={12} className="text-yellow-600"/> {anime.score} 
                   </p>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                    Rilis: {anime.latestReleaseDate}
+                    Rilis: {anime.lastReleaseDate}
                   </p>
                 </div>
               </Link>
